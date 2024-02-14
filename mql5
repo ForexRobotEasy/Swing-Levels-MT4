@@ -1,0 +1,76 @@
+
+//+------------------------------------------------------------------+
+//|                                             Swing Levels MT4                                      |
+//|                            Developed by Forex Robot Easy Team                      |
+//|                                   forexroboteasy.com                                      |
+//+------------------------------------------------------------------+
+#property copyright 'Forex Robot Easy Team'
+#property link      'forexroboteasy.com'
+
+// Customizable Variables
+input bool showSwingHighs = true; // Show Swing Highs
+input bool showSwingLows = true; // Show Swing Lows
+input bool showPreviousHighsLows = true; // Show Previous Highs and Lows
+input bool showICTMidnightLevels = true; // Show ICT US Midnight Levels
+input bool showICTPreopenLevel = true; // Show ICT US Preopen 8:30 AM Level
+input bool showRoundedLevels = true; // Show Rounded Levels
+input bool toggleLevels = true; // Toggle levels display on/off
+
+//+------------------------------------------------------------------+
+//| Custom Indicator Initialization Function                                   |
+//+------------------------------------------------------------------+
+int OnInit()
+{
+    // Add indicator initialization code here
+    
+    return(INIT_SUCCEEDED);
+}
+
+//+------------------------------------------------------------------+
+//| Custom Indicator Deinitialization Function                                |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+{
+    // Add indicator deinitialization code here
+}
+
+//+------------------------------------------------------------------+
+//| Custom Indicator Calculation Function                                         |
+//+------------------------------------------------------------------+
+int OnCalculate(const int rates_total,
+                const int prev_calculated,
+                const datetime &time[],
+                const double &open[],
+                const double &high[],
+                const double &low[],
+                const double &close[],
+                const long &tick_volume[],
+                const long &volume[],
+                const int &spread[])
+{
+    // Add indicator calculation code here
+    
+    return(rates_total);
+}
+
+//+------------------------------------------------------------------+
+//| Custom Indicator Level Drawing Function                                   |
+//+------------------------------------------------------------------+
+void OnChartEvent(const int id,
+                 const long &lparam,
+                 const double &dparam,
+                 const string &sparam)
+{
+    if (id == CHARTEVENT_OBJECT_CLICK && sparam == 'toggleButton')
+    {
+        toggleLevels = !toggleLevels;
+    }
+    
+    // Add level drawing code here
+}
+
+//+------------------------------------------------------------------+
+//| Custom Indicator Helper Functions                                             |
+//+------------------------------------------------------------------+
+// Add necessary helper functions here
+
